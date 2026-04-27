@@ -371,6 +371,3 @@ Install: `pip install -r requirements.txt`
 
 ---
 
-## License
-
-MIT License — free to use, modify, and distribute.
