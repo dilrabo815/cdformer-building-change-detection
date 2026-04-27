@@ -20,8 +20,7 @@ env/
 # macOS
 .DS_Store
 
-# Model weights (large files)
-checkpoints/*.ckpt
+# Lightning internal logs (not useful to others)
 checkpoints/lightning_logs/
 
 # Logs
@@ -37,8 +36,8 @@ web/out/
 # Data (not committed — download separately)
 data/
 
-# Outputs
-outputs/
+# Outputs (keep demo visuals, ignore large generated files)
+outputs/demo_visuals/
 
 # Archives
 src.zip
