@@ -1,7 +1,7 @@
 # CDFormer: Satellite Building Change Detection
 
 **An end-to-end deep learning system for detecting urban building changes from bi-temporal satellite imagery.**  
-Built for [Uzcosmos](https://uzcosmos.uz/) cadastral monitoring. Trained on Google Colab (T4 GPU), runs inference locally on Mac (Apple Silicon / MPS).
+Built for cadastral monitoring and trained on Google Colab (T4 GPU).
 
 ---
 
