@@ -1,0 +1,67 @@
+# Experiment Configuration
+# This file defines the default configuration for training and inference.
+
+# ── Dataset ──────────────────────────────────────────────────────────
+datasets:
+  - name: LEVIR-CD
+    path: data/ready/levir
+    weight: 1.0
+
+# ── Model ────────────────────────────────────────────────────────────
+model:
+  type: baseline          # "baseline" (SiamUNet) or "advanced" (TransformerCD)
+  in_channels: 3
+  classes: 1
+
+# ── Training ─────────────────────────────────────────────────────────
+training:
+  epochs: 100
+  batch_size: 16          # reduce to 8 for advanced model on Colab free
+  img_size: 256
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  patience: 15            # early stopping patience
+  num_workers: 2
+  seed: 42
+  precision: "16-mixed"   # use "32" for CPU/MPS
+
+# ── Augmentation ─────────────────────────────────────────────────────
+augmentation:
+  horizontal_flip: true
+  vertical_flip: true
+  rotate_90: true
+  shift_scale_rotate:
+    shift_limit: 0.0625
+    scale_limit: 0.2
+    rotate_limit: 30
+    probability: 0.3
+  color_jitter:
+    brightness: 0.3
+    contrast: 0.3
+    saturation: 0.3
+    hue: 0.1
+    probability: 0.4
+  sensor_degradation:
+    gauss_noise_var: [10.0, 50.0]
+    blur_limit: [3, 7]
+    jpeg_quality: [60, 100]
+    probability: 0.3
+
+# ── Inference ────────────────────────────────────────────────────────
+inference:
+  tile_size: 256
+  overlap: 64
+  threshold: 0.5
+  device: auto            # "auto", "cpu", "mps", or "cuda"
+
+# ── Post-Processing ─────────────────────────────────────────────────
+post_processing:
+  morphological_open_kernel: 3
+  morphological_close_kernel: 5
+  min_component_area: 25  # pixels — remove regions smaller than this
+
+# ── Paths ────────────────────────────────────────────────────────────
+paths:
+  checkpoint_dir: checkpoints/
+  output_dir: outputs/
+  demo_visuals_dir: outputs/demo_visuals/

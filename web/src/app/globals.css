@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-white antialiased;
+    background-image: radial-gradient(circle at 50% 0%, #162235 0%, #0a0a0c 50%);
+    background-attachment: fixed;
+  }
+}
+
+.glass-panel {
+  @apply bg-surface/60 backdrop-blur-md border border-white/10 shadow-xl rounded-2xl;
+}

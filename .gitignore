@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Model weights (large files)
+checkpoints/*.ckpt
+checkpoints/lightning_logs/
+
+# Logs
+*.log
+backend.log
+backend_debug.log
+
+# Node / Next.js
+web/node_modules/
+web/.next/
+web/out/
+
+# Data (not committed — download separately)
+data/
+
+# Outputs
+outputs/
+
+# Archives
+src.zip
