@@ -145,7 +145,7 @@ Pre-patch the dataset to 256×256 before training (see `scripts/preprocess_datas
 ### 1. Install Dependencies
 
 ```bash
-git clone https://github.com/dilrabo815/uzcosmos-change-detection.git
+git clone https://github.com/dilrabo815/cdformer-building-change-detection.git
 cd uzcosmos-change-detection
 pip install -r requirements.txt
 ```
